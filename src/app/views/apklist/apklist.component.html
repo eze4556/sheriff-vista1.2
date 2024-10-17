@@ -1,0 +1,87 @@
+
+<ion-header>
+  <ion-toolbar>
+
+   <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="irAHome()" >
+        <ion-img src="../../assets/icon/2c9611c8-4972-4093-8caa-5f435e179f26-removebg-preview.png" alt="Logo" style="height: 60px;"></ion-img>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">Hebillas Disponibles</ion-title>
+    <ion-buttons slot="end">
+      <a href="https://www.instagram.com/sheriffbelts" target="_blank" rel="noopener noreferrer">
+        <ion-button fill="clear" class="instagram-button">
+          <ion-icon src="../../assets/icon/instagram-svgrepo-com.svg" slot="icon-only"></ion-icon>
+        </ion-button>
+      </a>
+
+<ion-button fill="clear" class="cart-button" (click)="irAcARRITO()">
+  <ion-icon src="../../../assets/icon/shoppingcart_80945.svg" slot="icon-only"></ion-icon>
+</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content class="ion-padding content-background">
+ <ion-grid>
+  <ion-row>
+    <ion-col size="12" size-md="6" size-lg="4" *ngFor="let buckle of buckles">
+      <ion-card class="buckle-card">
+
+
+        <!-- <ion-img [src]="buckle.imagenUrl" alt="{{ buckle.modelo }}" class="catalog-img"></ion-img> -->
+
+
+   <div *ngIf="buckle.imagenesUrl && buckle.imagenesUrl.length > 0">
+    <h3>Imágenes de la Hebilla</h3>
+    <div class="carousel">
+      <div class="carousel-images">
+        <img *ngFor="let imagenUrl of buckle.imagenesUrl"
+             [src]="imagenUrl"
+             class="carousel-img" />
+      </div>
+    </div>
+  </div>
+
+
+        <ion-card-header>
+          <ion-card-title>{{ buckle.modelo }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="buckle-card-content">
+          <p><strong>Material:</strong> {{ buckle.material }}</p>
+          <p><strong>Medida:</strong> {{ buckle.medida }}</p>
+          <p><strong>Peso:</strong> {{ buckle.peso }} g</p>
+          <p><strong>Precio:</strong> {{ getCurrencySymbol(buckle.currency) }}{{ buckle.price }}</p>
+
+
+ <ion-button expand="full" color="primary" (click)="addToCart(buckle)"  style="color: white;">Agregar 🛒</ion-button>
+
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+
+
+  <!-- Mensaje si no hay hebillas -->
+  <ion-text *ngIf="buckles.length === 0" color="medium" style="text-align: center; display: block;">
+    No hay hebillas subidas.
+  </ion-text>
+
+
+ <!-- Paginación -->
+  <div style="text-align: center; margin-top: 16px;">
+    <ion-button fill="clear" (click)="goToPreviousPage()" [disabled]="currentPage === 1">Anterior</ion-button>
+    <ion-button fill="clear" (click)="goToNextPage()" [disabled]="currentPage * itemsPerPage >= buckles.length">
+      Siguiente
+    </ion-button>
+  </div>
+
+
+</ion-content>
+
+

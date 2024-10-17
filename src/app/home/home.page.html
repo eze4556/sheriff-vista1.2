@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+
+   <ion-buttons slot="start">
+      <ion-button fill="clear">
+        <ion-img src="../../assets/icon/2c9611c8-4972-4093-8caa-5f435e179f26-removebg-preview.png" alt="Logo" style="height: 60px;"></ion-img> <!-- Cambia la ruta a tu logo -->
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title style="text-align: center;">Catalogo Sheriff Belts & Buckles </ion-title>
+
+    <ion-buttons slot="end">
+      <a href="https://www.instagram.com/sheriffbelts" target="_blank" rel="noopener noreferrer">
+        <ion-button fill="clear" class="instagram-button">
+          <ion-icon src="../../assets/icon/instagram-svgrepo-com.svg" slot="icon-only"></ion-icon>
+        </ion-button>
+      </a>
+
+
+ <ion-button fill="clear" class="cart-button" (click)="irAcARRITO()">
+  <ion-icon src="../../../assets/icon/shoppingcart_80945.svg" slot="icon-only"></ion-icon>
+</ion-button>
+
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content class="ion-padding content-background">
+  <!-- Título del catálogo -->
+  <div style="text-align: center; margin: 20px;">
+    <h2>Explora nuestras categorías</h2>
+  </div>
+
+  <ion-grid>
+  <ion-row>
+
+    <!-- Tarjeta de Hebillas -->
+    <ion-col size="12" size-md="4">
+      <ion-card button (click)="irACategorias()" class="catalog-card">
+        <ion-img class="catalog-img" src="../../assets/icon/8527e6bc-07b4-4526-b063-8581d3e7e931-removebg-preview.png"></ion-img>
+        <ion-card-header>
+          <ion-card-title class="title">Hebillas Disponibles</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Explora nuestra colección de hebillas con diseños únicos.
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <!-- Tarjeta de Cinturones -->
+    <ion-col size="12" size-md="4">
+      <ion-card button (click)="irApk()" class="catalog-card">
+      <!-- <ion-card button  class="catalog-card"> -->
+        <ion-img class="catalog-img" src="../../assets/icon/cinturones.png"></ion-img>
+        <ion-card-header>
+          <ion-card-title class="title">Cinturones Disponibles</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Descubre nuestra variedad de cinturones de alta calidad.
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <!-- Tarjeta de Lonjas -->
+    <ion-col size="12" size-md="4">
+      <ion-card button (click)="irAlonja()" class="catalog-card">
+      <!-- <ion-card button  class="catalog-card"> -->
+        <ion-img class="catalog-img" src="../../assets/icon/lonja.png"></ion-img>
+        <ion-card-header>
+          <ion-card-title class="title">Lonjas Disponibles</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Explora nuestras lonjas para fabricar tus propios cinturones.
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+  </ion-row>
+</ion-grid>
+
+
+</ion-content>

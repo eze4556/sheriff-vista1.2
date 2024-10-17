@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+
+   <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="irAHome()" >
+        <ion-img src="../../assets/icon/2c9611c8-4972-4093-8caa-5f435e179f26-removebg-preview.png" alt="Logo" style="height: 60px;"></ion-img>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">Ver Carrito</ion-title>
+    <ion-buttons slot="end">
+      <a href="https://www.instagram.com/sheriffbelts" target="_blank" rel="noopener noreferrer">
+        <ion-button fill="clear" class="instagram-button">
+          <ion-icon src="../../assets/icon/instagram-svgrepo-com.svg" slot="icon-only"></ion-icon>
+        </ion-button>
+      </a>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+
+
+
+
+<!-- <ion-content>
+  <ion-list class="cart-list" *ngIf="cartItems.length > 0; else emptyCart">
+    <ion-item class="cart-item" *ngFor="let item of cartItems">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="item.product.imagenUrl" alt="{{ getProductName(item.product) }}"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ getProductName(item.product) }}</h2>
+        <p>Precio: {{ getCurrencySymbol(item.product.currency) }}{{ item.product.price }}</p>
+      </ion-label>
+      <ion-button fill="clear" color="danger" (click)="removeItem(item.product)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item> -->
+
+
+
+<ion-content>
+  <ion-list class="cart-list" *ngIf="cartItems.length > 0; else emptyCart">
+    <ion-item class="cart-item" *ngFor="let item of cartItems">
+      <ion-thumbnail slot="start">
+        <!-- Asumiendo que tomas la primera imagen como miniatura -->
+        <ion-img [src]="item.product.imagenesUrl[0]" alt="{{ getProductName(item.product) }}"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ getProductName(item.product) }}</h2>
+        <p>Precio: {{ getCurrencySymbol(item.product.currency) }}{{ item.product.price }}</p>
+        <p *ngIf="item.product.imagenesUrl.length > 1">Imágenes disponibles: {{ item.product.imagenesUrl.length }}</p>
+      </ion-label>
+      <ion-button fill="clear" color="danger" (click)="removeItem(item.product)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+
+
+
+    <ion-button expand="full" color="success" (click)="checkout()">
+      Pedir
+    </ion-button>
+    <ion-button expand="full" color="medium" (click)="clearCart()">
+      Vaciar Carrito
+    </ion-button>
+  </ion-list>
+  <ng-template #emptyCart>
+    <ion-text class="ion-text-center">
+      <h3>Tu carrito está vacío </h3>
+    </ion-text>
+  </ng-template>
+</ion-content>

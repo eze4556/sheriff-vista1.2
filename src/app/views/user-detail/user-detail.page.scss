@@ -1,0 +1,75 @@
+ion-content {
+  --background: #f8f8f8;
+  padding: 16px;
+}
+
+
+
+.catalog-img {
+  height: 200px; /* Altura fija para las imágenes */
+  object-fit: contain; /* Para que las imágenes se adapten bien sin distorsionarse */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+ion-card {
+  height: 100%; /* Asegura que todas las tarjetas tengan el mismo tamaño */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+
+.buckle-card {
+  height: auto; /* Permitir que la altura se ajuste automáticamente */
+  width: 90%; /* Ancho de la tarjeta */
+  max-width: 300px; /* Ancho máximo de la tarjeta */
+  margin: auto; /* Centrar la tarjeta */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid transparent; /* Borde transparente por defecto */
+  border-radius: 10%; /* Bordes redondeados más sutiles */
+  overflow: hidden; /* Para que el contenido no sobresalga */
+  background-color: white; /* Color de fondo de la tarjeta */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave para un efecto de profundidad */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Transiciones suaves */
+  padding: 10px; /* Espaciado interno para el contenido */
+}
+
+.buckle-card:hover {
+  transform: scale(1.05); /* Efecto de ampliación al pasar el mouse */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más intensa al hacer hover */
+  border-color: gold; /* Borde dorado al pasar el mouse */
+}
+
+.buckle-card-content {
+  text-align: center; /* Centrar el contenido de las características */
+}
+
+ion-card-header {
+  text-align: center; /* Centrar el texto del título */
+}
+
+ion-card-title {
+  font-weight: bold; /* Estilo en negrita para el título */
+}
+
+
+.carousel {
+  display: flex;
+  overflow-x: auto; /* Permite desplazamiento horizontal */
+}
+
+.carousel-images {
+  display: flex;
+}
+
+.carousel-img {
+  max-width: 80px; /* Ajusta el tamaño según sea necesario */
+      max-width: 80px;
+    margin-right: 40px;
+    object-fit: cover; /* Cambia a 'contain' si deseas que la imagen mantenga su relación de aspecto */
+}
+

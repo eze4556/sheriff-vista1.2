@@ -1,0 +1,41 @@
+.cart-list {
+  --ion-item-background: #f9f9f9; // Color de fondo de los items
+  --ion-item-border-color: transparent; // Sin bordes visibles
+}
+
+.cart-item {
+  display: flex; // Usar flexbox para alineación
+  align-items: center; // Centrar verticalmente
+  margin: 10px 0; // Espaciado entre items
+  border-radius: 10px; // Bordes redondeados
+  padding: 10px; // Espaciado interno
+  background-color: #fff; // Color de fondo de los items
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); // Sombra sutil
+
+  ion-thumbnail {
+    width: 50px; // Ancho del thumbnail
+    height: 50px; // Alto del thumbnail
+    margin-right: 10px; // Espaciado a la derecha del thumbnail
+  }
+
+  ion-label {
+    flex: 1; // Ocupar espacio disponible
+    text-align: left; // Alinear texto a la izquierda
+
+    h2 {
+      font-size: 1.2em; // Tamaño de la fuente del nombre del producto
+      margin: 0; // Sin margen
+    }
+
+    p {
+      margin: 0; // Sin margen
+      font-size: 0.9em; // Tamaño de la fuente para el precio
+    }
+  }
+
+  ion-button {
+    width: 30px; // Ancho del botón de eliminar
+    height: 30px; // Alto del botón de eliminar
+    border-radius: 50%; // Botón circular
+  }
+}

@@ -1,0 +1,41 @@
+
+
+.catalog-card {
+  border: 2px solid gold; /* Borde dorado */
+  border-radius: 10px; /* Esquinas redondeadas */
+}
+
+
+.catalog-img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+ion-card-content {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente para el contenido */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 10px; /* Espaciado interno */
+}
+
+
+
+.catalog-card {
+  height: 350px; /* Altura fija para las tarjetas */
+}
+
+.catalog-img {
+  height: 200px; /* Altura fija para las imágenes */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  object-fit: contain; /* Para que las imágenes se adapten correctamente */
+}
+
+.title{
+
+text-align: center;
+
+}
+
+ion-content{
+--background: #ebebeb;
+}
